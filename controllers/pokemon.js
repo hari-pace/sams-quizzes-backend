@@ -17,8 +17,7 @@ const getAllUsers = async (req, res) => {
 // update an user
 const updateUser = async (req, res) => {
   try {
-    const { username } = req.body;
-    const { score } = req.body;
+    const { username, score, wrongGuesses } = req.body;
     const user = await User.findOneAndUpdate(
       { username: username },
       // {
@@ -38,8 +37,8 @@ const updateUser = async (req, res) => {
 const createUser = async (req, res) => {
   try {
     // We grab exactly the keys that we have in the blueprint (Schema)
-    const { username, score } = req.body;
-    const user = await User.create({ username, score });
+    const { username, score, wrongGuesses } = req.body;
+    const user = await User.create({ username, score, wrongGuesses });
     res.status(201).json(user);
   } catch (error) {
     res.status(500).json(error);
