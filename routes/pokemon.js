@@ -1,8 +1,12 @@
 const express = require("express");
-const { getAllUsers, updateUser } = require("../controllers/pokemon");
+const {
+  getAllUsers,
+  updateUser,
+  createUser,
+} = require("../controllers/pokemon");
 
 const api = express.Router();
 
-api.route("/pokemon").get(getAllUsers).put(updateUser);
+api.route("/pokemon").get(getAllUsers).put(updateUser).post(createUser);
 
 module.exports = api;
