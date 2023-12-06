@@ -9,6 +9,10 @@ const userPokemonSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  wrongGuesses: {
+    type: Number,
+    default: 0,
+  },
 });
 
 module.exports = mongoose.model("Pokemon - user", userPokemonSchema);
