@@ -1,0 +1,18 @@
+const mongoose = require("mongoose");
+
+const userCountriesSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    default: "Sam",
+  },
+  score: {
+    type: Number,
+    default: 0,
+  },
+  wrongGuesses: {
+    type: Number,
+    default: 0,
+  },
+});
+
+module.exports = mongoose.model("Countries - user", userCountriesSchema);
